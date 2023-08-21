@@ -1,0 +1,121 @@
+plugins {
+    id 'com.android.application'
+    id 'kotlin-android'
+    id 'kotlin-parcelize'
+    id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
+}
+
+android {
+    compileSdkVersion 33
+    buildToolsVersion "30.0.3"
+
+    defaultConfig {
+        applicationId "com.hs.mvvm"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+}
+
+dependencies {
+
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    implementation 'androidx.core:core-ktx:1.2.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'com.google.android.material:material:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.+'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+
+    //lifecycle
+    kapt "androidx.lifecycle:lifecycle-compiler:$versions.lifecycle"
+    //room
+    kapt "androidx.room:room-compiler:$versions.room"
+    //hilt
+    implementation "com.google.dagger:hilt-android:$versions.daggerHilt"
+    kapt "com.google.dagger:hilt-compiler:$versions.daggerHilt"
+
+    implementation "com.github.jenly1314:mvvmframe:$versions.mvvmframe"
+    //app-updater
+    implementation "com.github.jenly1314.AppUpdater:app-updater:$versions.appUpdater"
+    //app-dialog
+    implementation "com.github.jenly1314.AppUpdater:app-dialog:$versions.appUpdater"
+
+    implementation "com.king.thread:nevercrash:$versions.nevercrash"
+
+    implementation "com.king.base:util:$versions.base"
+    implementation "com.king.base:adapter:$versions.base"
+
+    implementation "com.github.jenly1314:BaseUrlManager:$versions.baseUrlManager"
+
+    implementation "com.orhanobut:logger:$versions.logger"
+
+    implementation "com.github.CymChad:BaseRecyclerViewAdapterHelper:$versions.brvah"
+
+    implementation "io.github.scwang90:refresh-layout-kernel:$versions.smartRefreshLayout"
+    implementation "io.github.scwang90:refresh-header-material:$versions.smartRefreshLayout"
+    implementation "io.github.scwang90:refresh-footer-classics:$versions.smartRefreshLayout"
+//    implementation "io.github.scwang90:SmartRefreshLayout:$versions.smartRefreshLayout"
+//    implementation "io.github.scwang90:SmartRefreshHeader:$versions.smartRefreshLayout"
+
+    implementation "com.github.bumptech.glide:glide:$versions.glide"
+    kapt "com.github.bumptech.glide:compiler:$versions.glide"
+
+    implementation "com.tencent:mmkv:$versions.mmkv"
+
+//    implementation "com.github.tbruyelle:rxpermissions:$versions.rxpermissions"
+
+    implementation "com.tencent.bugly:crashreport_upgrade:$versions.bugly"
+
+    implementation "com.tencent.tinker:tinker-android-lib:$versions.tinker"
+
+    implementation "androidx.multidex:multidex:$versions.multidex"
+
+    //leakCanary
+    debugImplementation "com.squareup.leakcanary:leakcanary-android:$versions.leakcanary"
+
+    implementation "com.github.GrenderG:Toasty:$versions.toasty"
+
+    implementation "de.hdodenhof:circleimageview:$versions.circleimageview"
+
+    implementation "io.github.youth5201314:banner:$versions.banner"
+
+    implementation "me.jessyan:autosize:$versions.autosize"
+
+    implementation "io.github.androidktx:android-ktx:$versions.androidktx"
+
+    implementation "com.github.jenly1314:kvcache:$versions.kvcache"
+
+    implementation "com.king.image:imageviewer:$versions.imageviewer"
+//    implementation "com.king.guide:guidepage:$versions.guidepage"
+
+
+
+//    implementation "org.greenrobot:eventbus:$versions.eventbus"
+//
+//    implementation "de.hdodenhof:circleimageview:$versions.circleimageview"
+//
+//    implementation "com.github.chrisbanes:PhotoView:$versions.photoView"
+//
+//    debugImplementation "com.amitshekhar.android:debug-db:$versions.debugDb"
+
+}
